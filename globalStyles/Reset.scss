@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  outline: 0;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+.containerWrap {
+  width: 85vw;
+  margin: 0 auto;
+}
+.wrap {
+  width: 100%;
+  color: var(--baseColor);
+  font-family: var(--baseFont);
+  background-color: var(--bgColor);
+  font-size: (--bodySize);
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+}
+textarea {
+  resize: none;
+}
+input,
+button {
+  outline: 0;
+}
+fieldset {
+  border: none;
+}
