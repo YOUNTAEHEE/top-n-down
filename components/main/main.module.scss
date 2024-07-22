@@ -7,14 +7,93 @@
     font-weight: 600;
     line-height: 55px;
     font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: --baseColor;
   }
   .containerWrap {
+    width: 85vw;
+    margin: 0 auto;
+    min-height: 600px;
+    padding-top: 10vh;
+    padding-bottom: 15vh;
     .topCardList {
+      width: 100%;
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
       align-items: center;
       gap: 20px;
+      .cardListTitle {
+        text-align: right;
+        font-size: 2.3rem;
+        align-self: flex-end;
+        width: 380px;
+        .TitleEng {
+          font-size: 3.6rem;
+          font-weight: 500;
+        }
+      }
+      .cardList {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: calc(100% - 400px);
+        .cardWid {
+          width: calc(100% / 4);
+        }
+      }
+    }
+    .middleCardList {
+      width: 100%;
+      .cardListTitle {
+        width: 100%;
+        text-align: right;
+        font-size: 2.3rem;
+        margin-bottom: 35px;
+        margin-top: 15vh;
+        .TitleEng {
+          font-size: 3.6rem;
+          font-weight: 500;
+        }
+      }
+      .cardList {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+        .midCardWid {
+          width: calc((100% - 80px) / 5);
+        }
+      }
+    }
+    .downCardList {
+      margin-top: 15vh;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      .cardListTitle {
+        text-align: right;
+        font-size: 2.3rem;
+        align-self: flex-end;
+        width: 380px;
+        .TitleEng {
+          font-size: 3.6rem;
+          font-weight: 500;
+        }
+      }
+      .cardList {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: calc(100% - 400px);
+        .cardWid {
+          width: calc(100% / 4);
+        }
+      }
     }
   }
 }

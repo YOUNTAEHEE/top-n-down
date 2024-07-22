@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "@/globalStyles/Reset.scss";
 import "@/globalStyles/Variables.scss";
 import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <main className="wrap">
           <Header />
           <div>{children}</div>
+          <Footer />
         </main>
       </body>
     </html>

@@ -3,20 +3,19 @@ import clsx from "clsx";
 
 export default function PastCard() {
   return (
-    <article className={styles.postCard}>
-      <div>
-        <p>게시글 제목입니다. 게시글 제목입니다.</p>
-        <p>
+    <article className={clsx(styles.postCard)}>
+      <div className={styles.cardConTop}>
+        <p className={styles.cardTitle}>게시글 제목입니다. 게시글 제목입니다.</p>
+        <p className={styles.cardCon}>
           게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글
-          내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.
         </p>
       </div>
-      <p>
-        <span>
-          TOP <span>1000</span>
+      <p className={styles.cardTopndown}>
+        <span className={styles.topView}>
+          TOP <span className={styles.topNum}>1000</span>
         </span>
-        <span>
-          DOWN <span>1000</span>
+        <span className={styles.downView}>
+          DOWN <span className={styles.downNum}>1000</span>
         </span>
       </p>
     </article>
