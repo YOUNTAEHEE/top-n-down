@@ -1,0 +1,41 @@
+.pagination {
+  width: 100%;
+  text-align: center;
+  margin-top: 70px;
+  .page_num_box_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+    svg:nth-child(1) {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .page_num_box_off {
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      border: 1px solid rgba(var(--baseColor-code), 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgba(var(--baseColor-code), 0.3);
+
+      &.page_num_box {
+        width: 35px;
+        height: 35px;
+        border: 1px solid var(--baseColor);
+        color: var(--baseColor);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+    svg:last-child {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+}

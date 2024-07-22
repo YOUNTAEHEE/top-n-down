@@ -1,6 +1,7 @@
 import styles from "./main.module.scss";
 import clsx from "clsx";
 import PostCard from "../postCard/PostCard";
+import Pagination from "../pagination/Pagination";
 
 export default function MainPage() {
   return (
@@ -78,6 +79,7 @@ export default function MainPage() {
               <PostCard />
             </div>
           </div>
+          <Pagination />
         </section>
         <section className={styles.downCardList}>
           <h2 className={styles.cardListTitle}>
