@@ -4,6 +4,7 @@ import "@/globalStyles/Reset.scss";
 import "@/globalStyles/Variables.scss";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import Cover from "@/components/cover/Cover";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Cover />
         <main className="wrap">
           <Header />
           <div>{children}</div>

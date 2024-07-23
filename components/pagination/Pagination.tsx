@@ -1,13 +1,11 @@
 import styles from "./pagination.module.scss";
 import clsx from "clsx";
-
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 export default function Pagination() {
   return (
     <div className={clsx(styles.pagination)}>
       <div className={styles.page_num_box_wrap}>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" width="20" height="20" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-        </svg>
+        <SlArrowLeft />
 
         <div className={clsx(styles.page_num_box_off, styles.page_num_box)}>1</div>
 
@@ -27,9 +25,7 @@ export default function Pagination() {
 
         <div className={clsx(styles.page_num_box_off)}>9</div>
 
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" width="20" height="20" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-        </svg>
+        <SlArrowRight />
       </div>
     </div>
   );

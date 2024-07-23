@@ -2,7 +2,7 @@
 import styles from "./postCard.module.scss";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
-export default function PastCard() {
+export default function PostCard() {
   const router = useRouter();
   return (
     <article className={clsx(styles.postCard)} onClick={() => router.push("/post/${id}")}>
