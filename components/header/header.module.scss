@@ -1,4 +1,55 @@
 .headerWrap {
   width: 100%;
   height: 100px;
+  .containerWrap {
+    width: 85vw;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      cursor: pointer;
+    }
+    .writeBtn {
+      width: 115px;
+      height: 25px;
+      text-align: right;
+      color: var(--baseColor);
+      font-size: 1.1rem;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--baseColor);
+      background: none;
+      position: relative;
+      cursor: pointer;
+      .writeBtnTxt {
+        color: var(--baseColor);
+        font-size: 1.1rem;
+        display: inline-block;
+        position: relative;
+        &::before {
+          content: "";
+          border-bottom: 1px solid var(--baseColor);
+          width: 40px;
+          background-color: var(--baseColor);
+          height: 0.2px;
+          position: absolute;
+          top: 75%;
+          left: -50%;
+          transform: translateX(-50%);
+        }
+        &::after {
+          content: "";
+          border-bottom: 1px solid var(--baseColor);
+          width: 25px;
+          background-color: var(--baseColor);
+          height: 0.1px;
+          position: absolute;
+          top: 30%;
+          left: -50%;
+          transform: translateX(-20%);
+        }
+      }
+    }
+  }
 }

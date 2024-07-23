@@ -1,9 +1,11 @@
+"use client";
 import styles from "./postCard.module.scss";
 import clsx from "clsx";
-
+import { useRouter } from "next/navigation";
 export default function PastCard() {
+  const router = useRouter();
   return (
-    <article className={clsx(styles.postCard)}>
+    <article className={clsx(styles.postCard)} onClick={() => router.push("/post/${id}")}>
       <div className={styles.cardConTop}>
         <p className={styles.cardTitle}>게시글 제목입니다. 게시글 제목입니다.</p>
         <p className={styles.cardCon}>

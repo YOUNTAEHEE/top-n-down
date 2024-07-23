@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: var(--bgColor);
+}
 ul,
 ol,
 li {
@@ -15,13 +18,13 @@ a {
   font-weight: inherit;
   text-decoration: none;
 }
-.containerWrap {
-  width: 85vw;
-  margin: 0 auto;
-  min-height: 600px;
-  padding-top: 10vh;
-  padding-bottom: 15vh;
-}
+// .containerWrap {
+//   width: 85vw;
+//   margin: 0 auto;
+//   min-height: 600px;
+//   padding-top: 10vh;
+//   padding-bottom: 15vh;
+// }
 .wrap {
   width: 100%;
   color: var(--baseColor);
@@ -44,4 +47,7 @@ button {
 }
 fieldset {
   border: none;
+}
+button {
+  all: unset;
 }

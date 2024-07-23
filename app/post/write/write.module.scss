@@ -1,0 +1,50 @@
+.postWriteWrap {
+  width: 100%;
+  .containerWrap {
+    width: 85vw;
+    margin: 0 auto;
+    min-height: 600px;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    form {
+      .writeConTitle {
+        font-size: 1.1rem;
+        color: var(--baseColor);
+        margin-bottom: 10px;
+      }
+      input {
+        border: 1px solid var(--baseColor);
+        width: 100%;
+        padding: 10px;
+        background-color: var(--bgColor);
+        border-radius: 10px;
+        color: var(--baseColor);
+        font-size: 1rem;
+        height: 45px;
+        margin-bottom: 50px;
+      }
+      textarea {
+        border: 1px solid var(--baseColor);
+        width: 100%;
+        padding: 10px;
+        background-color: var(--bgColor);
+        border-radius: 10px;
+        color: var(--baseColor);
+        font-size: 1rem;
+        height: 400px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+          width: 8px;
+          margin: 40px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #fff;
+          border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
