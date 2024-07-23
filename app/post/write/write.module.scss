@@ -45,6 +45,35 @@
           background-color: transparent;
         }
       }
+      .btnWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 50px;
+        .cancleBtn {
+          width: 90px;
+          height: 25px;
+          text-align: center;
+          line-height: 25px;
+          border: 1px solid rgba(var(--baseColor-code), 0.7);
+          padding: 10px;
+          color: rgba(var(--baseColor-code), 0.7);
+          font-size: 1rem;
+          border-radius: 10px;
+        }
+        .saveBtn {
+          width: 90px;
+          height: 25px;
+          text-align: center;
+          line-height: 25px;
+          border: 1px solid var(--baseColor);
+          padding: 10px;
+          color: var(--baseColor);
+          font-size: 1rem;
+          border-radius: 10px;
+        }
+      }
     }
   }
 }

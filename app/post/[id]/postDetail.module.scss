@@ -1,0 +1,113 @@
+.postDetailWrap {
+  width: 100%;
+  .containerWrap {
+    width: 85vw;
+    margin: 0 auto;
+    min-height: 600px;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    .detailConTitle {
+      font-size: 2.2rem;
+      color: var(--baseColor);
+    }
+    .detailCon {
+      min-height: 300px;
+      margin-top: 30px;
+      font-size: 1.1rem;
+      color: var(--baseColor);
+    }
+    .btnWrap {
+      text-align: center;
+      .beforeBtn {
+        width: 90px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        border: 1px solid var(--baseColor);
+        padding: 10px;
+        color: var(--baseColor);
+        font-size: 1rem;
+        border-radius: 10px;
+      }
+    }
+    .choiceWrap {
+      margin-top: 12vh;
+      .choiceTop {
+        .topBtn {
+          font-size: 1.8rem;
+          font-weight: 500;
+          color: rgba(var(--baseColor-code), 0.5);
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.on {
+            color: rgba(var(--baseColor-code), 1);
+          }
+          .choiceTopSTxt {
+            font-size: 0.8rem;
+            margin-left: 5px;
+            color: rgba(var(--baseColor-code), 0.5);
+            &.on {
+              color: rgba(var(--baseColor-code), 1);
+            }
+          }
+        }
+        .topVote {
+          border: 1px solid #b129a4;
+          width: 100%;
+          height: 40px;
+
+          .voteNum {
+            width: 70%;
+            height: 40px;
+            background-color: #b129a4;
+            color: #ff91f4;
+            font-weight: 200;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 10px;
+          }
+        }
+      }
+      .choiceDown {
+        margin-top: 30px;
+        .downBtn {
+          font-size: 1.8rem;
+          font-weight: 500;
+          color: rgba(var(--baseColor-code), 0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .choiceTopSTxt {
+            font-size: 0.8rem;
+            margin-left: 5px;
+            color: rgba(var(--baseColor-code), 0.5);
+            &.on {
+              color: rgba(var(--baseColor-code), 1);
+            }
+          }
+        }
+        .downVote {
+          border: 1px solid #6d0763;
+          width: 100%;
+          height: 40px;
+          .voteNum {
+            width: 70%;
+            height: 40px;
+            background-color: #6d0763;
+            color: #b613a6;
+            font-weight: 200;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

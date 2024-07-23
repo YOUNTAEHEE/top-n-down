@@ -10,6 +10,14 @@ export default function Write() {
           <input type="text" />
           <p className={styles.writeConTitle}>내용</p>
           <textarea name="" id=""></textarea>
+          <div className={styles.btnWrap}>
+            <button type="button" className={styles.cancleBtn}>
+              취소
+            </button>
+            <button type="button" className={styles.saveBtn}>
+              등록
+            </button>
+          </div>
         </form>
       </div>
     </section>
