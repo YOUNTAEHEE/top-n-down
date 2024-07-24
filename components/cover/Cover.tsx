@@ -3,6 +3,7 @@ import styles from "./cover.module.scss";
 import clsx from "clsx";
 import PostCard from "../postCard/PostCard";
 import { useEffect, useState } from "react";
+import { BsHandThumbsUpFill } from "react-icons/bs";
 interface Props {
   off: string;
 }
@@ -21,8 +22,10 @@ export default function Cover({ off }: Props) {
               <p>TOP ISSUE</p>
               <p>TOP ISSUE</p>
             </div>
-            <div>
-              <div></div>
+            <div className={styles.leftBottom}>
+              <div className={styles.goodBig}>
+                <BsHandThumbsUpFill />
+              </div>
             </div>
           </section>
           <section className={styles.visualRight}>

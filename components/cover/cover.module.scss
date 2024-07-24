@@ -29,7 +29,7 @@
       width: 50%;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       flex-wrap: wrap;
       .leftTop {
         font-size: 5.7rem;
@@ -56,6 +56,12 @@
             color: rgba(1, 1, 1, 0.5);
             margin-bottom: 10px;
           }
+        }
+      }
+      .leftBottom {
+        .goodBig {
+          // color: rgba(var(--baseColor-code), 1);
+          // font-size: 3rem;
         }
       }
     }
