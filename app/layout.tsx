@@ -31,7 +31,7 @@ export default function RootLayout({
     if (cover) {
       const timer = setTimeout(() => {
         setCover(false);
-      }, 4000);
+      }, 2000);
 
       return () => {
         clearTimeout(timer);
