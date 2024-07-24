@@ -31,13 +31,13 @@ export default function RootLayout({
     if (cover) {
       const timer = setTimeout(() => {
         setCover(false);
-      }, 2000);
+      }, 4000);
 
       return () => {
         clearTimeout(timer);
       };
     }
-  }, []);
+  }, [cover]);
 
   return (
     <html lang="en">
@@ -46,7 +46,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {cover ? (
-          <Cover />
+          <Cover off={cover ? "on" : "off"} />
         ) : (
           <main className="wrap">
             <Header />

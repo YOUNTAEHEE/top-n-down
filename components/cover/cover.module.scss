@@ -1,63 +1,83 @@
-.coverWrap {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  position: absolute;
-  background-color: var(--bgColor);
-  z-index: 1000;
-  transition: opacity 1s ease-in-out, visibility 0s linear 1s;
-  padding: 20%;
+.coverAllWrap {
   &.on {
     opacity: 1;
     visibility: visible;
+    transition: opacity 1s ease-in-out, visibility 0s linear 1s;
   }
   &.off {
     opacity: 0;
     visibility: hidden;
   }
-  h2 {
+  .coverWrap {
     width: 100%;
-    font-size: 2.5rem;
-    font-weight: bold;
-    background: linear-gradient(90deg, rgba(187, 41, 173, 1) 0%, rgba(54, 4, 38, 1) 49%, rgba(255, 0, 0, 1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-  }
-  .visualLeft {
-    width: 50%;
-    height: 100%;
-    .leftTop {
-      font-size: 4rem;
-      font-weight: 800;
-      p {
-        &:nth-child(1) {
-          color: rgba(var(--baseColor-code), 1);
-        }
-        &:nth-child(2) {
-          color: rgba(var(--baseColor-code), 0.5);
-        }
-        &:nth-child(3) {
-          color: rgba(var(--baseColor-code), 0.2);
-        }
-        &:nth-child(4) {
-          color: rgba(var(--baseColor-code), 0.1);
-        }
-        &:nth-child(5) {
-          color: rgba(1, 1, 1, 0.5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    background-color: var(--bgColor);
+    z-index: 1000;
+    padding: 3%;
+    h2 {
+      width: 100%;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ff0000;
+    }
+    .visualLeft {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      .leftTop {
+        font-size: 5.7rem;
+        font-weight: 800;
+
+        p {
+          &:nth-child(1) {
+            color: rgba(var(--baseColor-code), 1);
+            margin-bottom: 10px;
+          }
+          &:nth-child(2) {
+            color: rgba(var(--baseColor-code), 0.5);
+            margin-bottom: 10px;
+          }
+          &:nth-child(3) {
+            color: rgba(var(--baseColor-code), 0.2);
+            margin-bottom: 10px;
+          }
+          &:nth-child(4) {
+            color: rgba(var(--baseColor-code), 0.1);
+            margin-bottom: 10px;
+          }
+          &:nth-child(5) {
+            color: rgba(1, 1, 1, 0.5);
+            margin-bottom: 10px;
+          }
         }
       }
     }
-  }
-  .visualRight {
-    width: 50%;
-    height: 100%;
-    .cardSize {
-      width: 307px;
+    .visualRight {
+      width: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px 20px;
+      .cardDiv {
+        &:first-child {
+          margin-top: -100px;
+        }
+        .cardSize {
+          width: 307px;
+
+          &:last-child {
+            margin-top: 20px;
+          }
+        }
+      }
     }
   }
 }

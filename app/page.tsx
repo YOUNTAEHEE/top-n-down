@@ -1,5 +1,9 @@
-import Home from "./Home";
+import MainPage from "@/components/main/Main";
 
-export default function Page({ children }: { children: React.ReactNode }) {
-  return <Home>{children}</Home>;
+export default function Home() {
+  return (
+    <>
+      <MainPage />
+    </>
+  );
 }
