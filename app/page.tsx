@@ -1,11 +1,5 @@
-import Image from "next/image";
-import MainPage from "@/components/main/Main";
+import Home from "./Home";
 
-export default function Home() {
-  return (
-    <>
-      <MainPage />
-      {/* <Cover /> */}
-    </>
-  );
+export default function Page({ children }: { children: React.ReactNode }) {
+  return <Home>{children}</Home>;
 }
