@@ -20,11 +20,12 @@ export default function RootLayout({
   const [isCoverVisible, setIsCoverVisible] = useState(true);
   useEffect(() => {
     const coverShown = sessionStorage.getItem("coverShown");
-    if (!coverShown) {
+    if (coverShown) {
+      setCover(false);
+      setIsCoverVisible(false);
+    } else {
       sessionStorage.setItem("coverShown", "true");
       setCover(true);
-    } else {
-      setCover(false);
     }
   }, []);
 
