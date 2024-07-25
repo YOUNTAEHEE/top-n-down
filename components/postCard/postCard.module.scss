@@ -8,11 +8,12 @@
   flex-wrap: wrap;
   padding: 20px;
   cursor: default;
-  &.noPointer {
-    cursor: default;
+  &.coverStyle {
+    border: none;
   }
-  &.yesPointer {
+  &.mainStyle {
     cursor: pointer;
+    background-color: black;
   }
   &.middleWidth {
     width: calc((100% - 80px) / 5);
@@ -23,6 +24,7 @@
   &.coverWidth {
     width: 307px;
   }
+
   .cardConTop {
     width: 100%;
     display: flex;
@@ -32,13 +34,26 @@
     .cardTitle {
       width: 100%;
       font-size: 1.5rem;
+      font-weight: 800;
       margin-bottom: 20px;
       align-self: flex-start;
       color: var(--baseColor);
+      &.coverStyle {
+        color: var(--bgColor);
+      }
+      &.mainStyle {
+        color: var(--baseColor);
+      }
     }
     .cardCon {
       width: 100%;
       color: var(--baseColor);
+      &.coverStyle {
+        color: var(--bgColor);
+      }
+      &.mainStyle {
+        color: var(--baseColor);
+      }
     }
   }
 

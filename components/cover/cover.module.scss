@@ -2,16 +2,12 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+
   &.on {
-    opacity: 1;
-    // visibility: visible;
-    transition: opacity 1s ease-in-out;
-    // , visibility 0s linear 1s;
+    animation: fadeout 3s forwards;
   }
   &.off {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    // visibility: hidden;
+    display: none;
   }
   .coverWrap {
     width: 100%;
@@ -24,6 +20,7 @@
     background-color: var(--bgColor);
     z-index: 1000;
     padding: 3%;
+
     h2 {
       width: 100%;
       font-size: 2.5rem;
@@ -235,10 +232,33 @@
         &:first-child {
           margin-top: -100px;
         }
+        .coverCardWhiteBg01 {
+          background-color: rgba(var(--baseColor-code), 0.3);
+        }
+        .coverCardWhiteBg02 {
+          background-color: rgba(var(--baseColor-code), 0.7);
+        }
+        .coverCardWhiteBg03 {
+          background-color: rgba(var(--baseColor-code), 0.5);
+        }
+        .coverCardWhiteBg04 {
+          background-color: rgba(var(--baseColor-code), 0.8);
+        }
+
         .cardMt {
           margin-top: 20px;
         }
       }
     }
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }

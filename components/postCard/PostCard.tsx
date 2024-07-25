@@ -7,8 +7,9 @@ interface Props {
   bestWidth?: string;
   coverWidth?: string;
   linkMove?: boolean;
+  coverCardWhiteBg?: string;
 }
-export default function PostCard({ middleWidth, bestWidth, coverWidth, linkMove }: Props) {
+export default function PostCard({ middleWidth, bestWidth, coverWidth, linkMove, coverCardWhiteBg }: Props) {
   const router = useRouter();
   const handleClick = () => {
     if (!linkMove) {
@@ -22,14 +23,15 @@ export default function PostCard({ middleWidth, bestWidth, coverWidth, linkMove 
         middleWidth && styles[middleWidth],
         bestWidth && styles[bestWidth],
         coverWidth && styles[coverWidth],
-        !linkMove && styles.yesPointer,
-        linkMove && styles.noPointer
+        !linkMove && styles.mainStyle,
+        linkMove && styles.coverStyle,
+        coverCardWhiteBg
       )}
       onClick={handleClick}
     >
       <div className={styles.cardConTop}>
-        <p className={styles.cardTitle}>게시글 제목입니다. 게시글 제목입니다.</p>
-        <p className={styles.cardCon}>
+        <p className={clsx(styles.cardTitle, !linkMove && styles.mainStyle, linkMove && styles.coverStyle)}>게시글 제목입니다. 게시글 제목입니다.</p>
+        <p className={clsx(styles.cardCon, !linkMove && styles.mainStyle, linkMove && styles.coverStyle)}>
           게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글
         </p>
       </div>

@@ -32,7 +32,7 @@ export default function RootLayout({
     if (cover) {
       const timer = setTimeout(() => {
         setCover(false);
-      }, 1000);
+      }, 3000);
 
       return () => {
         clearTimeout(timer);
@@ -47,7 +47,6 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {cover ? (
-          // <div className={`${cover ? "on" : "off"} mainCover`}>
           <Cover off={cover ? "on" : "off"} linkMove={cover ? true : false} />
         ) : (
           <main className="wrap">

@@ -49,15 +49,15 @@ export default function Cover({ off, linkMove }: Props) {
           </section>
           <section className={styles.visualRight}>
             <div className={styles.cardDiv}>
-              <PostCard coverWidth="coverWidth" linkMove={linkMove} />
+              <PostCard coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg01} />
               <div className={styles.cardMt}>
-                <PostCard coverWidth="coverWidth" linkMove={linkMove} />
+                <PostCard coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg02} />
               </div>
             </div>
             <div className={styles.cardDiv}>
-              <PostCard coverWidth="coverWidth" linkMove={linkMove} />
+              <PostCard coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg03} />
               <div className={styles.cardMt}>
-                <PostCard coverWidth="coverWidth" linkMove={linkMove} />
+                <PostCard coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg04} />
               </div>
             </div>
           </section>
