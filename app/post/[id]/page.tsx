@@ -1,6 +1,7 @@
+"use client";
 import styles from "./postDetail.module.scss";
 import clsx from "clsx";
-
+import { useRouter } from "next/navigation";
 interface PostDetailProps {
   params: {
     id: number;
@@ -8,6 +9,7 @@ interface PostDetailProps {
 }
 
 export default function PostDetail({ params }: PostDetailProps) {
+  const router = useRouter();
   return (
     <section className={styles.postDetailWrap}>
       <div className={styles.containerWrap}>
@@ -17,7 +19,7 @@ export default function PostDetail({ params }: PostDetailProps) {
           내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
         </div>
         <div className={styles.btnWrap}>
-          <button type="button" className={styles.beforeBtn}>
+          <button type="button" className={styles.beforeBtn} onClick={() => router.push("/")}>
             이전으로
           </button>
         </div>
