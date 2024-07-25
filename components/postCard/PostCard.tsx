@@ -6,13 +6,25 @@ interface Props {
   middleWidth?: string;
   bestWidth?: string;
   coverWidth?: string;
+  linkMove?: boolean;
 }
-export default function PostCard({ middleWidth, bestWidth, coverWidth }: Props) {
+export default function PostCard({ middleWidth, bestWidth, coverWidth, linkMove }: Props) {
   const router = useRouter();
+  const handleClick = () => {
+    if (linkMove) {
+      router.push("/post/${id}");
+    }
+  };
   return (
     <article
-      className={clsx(styles.postCard, middleWidth && styles[middleWidth], bestWidth && styles[bestWidth], coverWidth && styles[coverWidth])}
-      onClick={() => router.push("/post/${id}")}
+      className={clsx(
+        styles.postCard,
+        middleWidth && styles[middleWidth],
+        bestWidth && styles[bestWidth],
+        coverWidth && styles[coverWidth],
+        !linkMove && styles.noPointer
+      )}
+      onClick={handleClick}
     >
       <div className={styles.cardConTop}>
         <p className={styles.cardTitle}>게시글 제목입니다. 게시글 제목입니다.</p>

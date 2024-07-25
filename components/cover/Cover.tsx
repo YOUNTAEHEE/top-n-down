@@ -4,8 +4,9 @@ import PostCard from "../postCard/PostCard";
 import { BsHandThumbsUpFill } from "react-icons/bs";
 interface Props {
   off: string;
+  linkMove: boolean;
 }
-export default function Cover({ off }: Props) {
+export default function Cover({ off, linkMove }: Props) {
   return (
     <>
       <div className={clsx(styles.coverAllWrap, off && styles[off])}>
@@ -48,15 +49,15 @@ export default function Cover({ off }: Props) {
           </section>
           <section className={styles.visualRight}>
             <div className={styles.cardDiv}>
-              <PostCard coverWidth="coverWidth" />
+              <PostCard coverWidth="coverWidth" linkMove={linkMove} />
               <div className={styles.cardMt}>
-                <PostCard coverWidth="coverWidth" />
+                <PostCard coverWidth="coverWidth" linkMove={linkMove} />
               </div>
             </div>
             <div className={styles.cardDiv}>
-              <PostCard coverWidth="coverWidth" />
+              <PostCard coverWidth="coverWidth" linkMove={linkMove} />
               <div className={styles.cardMt}>
-                <PostCard coverWidth="coverWidth" />
+                <PostCard coverWidth="coverWidth" linkMove={linkMove} />
               </div>
             </div>
           </section>

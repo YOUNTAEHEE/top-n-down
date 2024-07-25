@@ -48,7 +48,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {cover ? (
           // <div className={`${cover ? "on" : "off"} mainCover`}>
-          <Cover off={cover ? "on" : "off"} />
+          <Cover off={cover ? "on" : "off"} linkMove={false} />
         ) : (
           <main className="wrap">
             <Header />

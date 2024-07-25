@@ -8,6 +8,9 @@
   flex-wrap: wrap;
   padding: 20px;
   cursor: pointer;
+  &.noPointer {
+    cursor: default;
+  }
   &.middleWidth {
     width: calc((100% - 80px) / 5);
   }
