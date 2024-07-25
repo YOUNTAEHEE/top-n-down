@@ -11,7 +11,7 @@ interface Props {
 export default function PostCard({ middleWidth, bestWidth, coverWidth, linkMove }: Props) {
   const router = useRouter();
   const handleClick = () => {
-    if (linkMove) {
+    if (!linkMove) {
       router.push("/post/${id}");
     }
   };
@@ -22,7 +22,8 @@ export default function PostCard({ middleWidth, bestWidth, coverWidth, linkMove 
         middleWidth && styles[middleWidth],
         bestWidth && styles[bestWidth],
         coverWidth && styles[coverWidth],
-        !linkMove && styles.noPointer
+        !linkMove && styles.yesPointer,
+        linkMove && styles.noPointer
       )}
       onClick={handleClick}
     >

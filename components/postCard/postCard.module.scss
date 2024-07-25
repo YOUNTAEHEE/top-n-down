@@ -7,9 +7,12 @@
   align-items: flex-start;
   flex-wrap: wrap;
   padding: 20px;
-  cursor: pointer;
+  cursor: default;
   &.noPointer {
     cursor: default;
+  }
+  &.yesPointer {
+    cursor: pointer;
   }
   &.middleWidth {
     width: calc((100% - 80px) / 5);
