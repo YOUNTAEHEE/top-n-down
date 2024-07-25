@@ -10,7 +10,7 @@ interface Props {
 export default function Cover({ off }: Props) {
   return (
     <>
-      <div className={clsx(styles.coverAllWrap, off)}>
+      <div className={clsx(styles.coverAllWrap, styles[off])}>
         <section className={clsx(styles.coverWrap)}>
           <h2>TOPNDOWN</h2>
           <section className={styles.visualLeft}>
@@ -23,26 +23,20 @@ export default function Cover({ off }: Props) {
               <p>TOP ISSUE</p>
             </div>
             <div className={styles.leftBottom}>
-              <div className={styles.goodBig}>
-                <BsHandThumbsUpFill />
-              </div>
+              <BsHandThumbsUpFill className={styles.goodBig} />
             </div>
           </section>
           <section className={styles.visualRight}>
             <div className={styles.cardDiv}>
-              <div className={styles.cardSize}>
-                <PostCard />
-              </div>
-              <div className={styles.cardSize}>
-                <PostCard />
+              <PostCard coverWidth="coverWidth" />
+              <div className={styles.cardMt}>
+                <PostCard coverWidth="coverWidth" />
               </div>
             </div>
             <div className={styles.cardDiv}>
-              <div className={styles.cardSize}>
-                <PostCard />
-              </div>
-              <div className={styles.cardSize}>
-                <PostCard />
+              <PostCard coverWidth="coverWidth" />
+              <div className={styles.cardMt}>
+                <PostCard coverWidth="coverWidth" />
               </div>
             </div>
           </section>

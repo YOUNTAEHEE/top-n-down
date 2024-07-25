@@ -27,6 +27,20 @@ a {
 //   padding-bottom: 10vh;
 // }
 
+// .mainCover {
+//   transition: opacity 1s ease-in-out, visibility 0s linear 1s;
+//   &.on {
+//     opacity: 1;
+//     visibility: visible;
+//     transition: opacity 1s ease-in-out, visibility 0s linear 1s;
+//   }
+//   &.off {
+//     opacity: 0;
+//     visibility: hidden;
+//     transition: opacity 1s ease-in-out, visibility 0s linear 1s;
+//   }
+// }
+
 .wrap {
   width: 100%;
   color: var(--baseColor);

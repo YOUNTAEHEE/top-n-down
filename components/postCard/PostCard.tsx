@@ -2,10 +2,18 @@
 import styles from "./postCard.module.scss";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
-export default function PostCard() {
+interface Props {
+  middleWidth?: string;
+  nomalWidth?: string;
+  coverWidth?: string;
+}
+export default function PostCard({ middleWidth, nomalWidth, coverWidth }: Props) {
   const router = useRouter();
   return (
-    <article className={clsx(styles.postCard)} onClick={() => router.push("/post/${id}")}>
+    <article
+      className={clsx(styles.postCard, middleWidth && styles[middleWidth], nomalWidth && styles[nomalWidth], coverWidth && styles[coverWidth])}
+      onClick={() => router.push("/post/${id}")}
+    >
       <div className={styles.cardConTop}>
         <p className={styles.cardTitle}>게시글 제목입니다. 게시글 제목입니다.</p>
         <p className={styles.cardCon}>

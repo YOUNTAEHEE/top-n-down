@@ -14,18 +14,10 @@ export default function MainPage() {
             <span className={styles.TitleEng}>TOP ISSUE</span>
           </h2>
           <div className={styles.cardList}>
-            <div className={styles.cardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.cardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.cardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.cardWid}>
-              <PostCard />
-            </div>
+            <PostCard nomalWidth="nomalWidth" />
+            <PostCard nomalWidth="nomalWidth" />
+            <PostCard nomalWidth="nomalWidth" />
+            <PostCard nomalWidth="nomalWidth" />
           </div>
         </section>
         <section className={styles.middleCardList}>
@@ -33,51 +25,21 @@ export default function MainPage() {
             새롭게 올라온 <span className={styles.TitleEng}>ISSUE</span>
           </h2>
           <div className={styles.cardList}>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.midCardWid}>
-              <PostCard />
-            </div>
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
+            <PostCard middleWidth="middleWidth" />
           </div>
           <Pagination />
         </section>
@@ -87,18 +49,10 @@ export default function MainPage() {
             <span className={styles.TitleEng}>DOWN ISSUE</span>
           </h2>
           <div className={styles.cardList}>
-            <div className={styles.cardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.cardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.cardWid}>
-              <PostCard />
-            </div>
-            <div className={styles.cardWid}>
-              <PostCard />
-            </div>
+            <PostCard nomalWidth="nomalWidth" />
+            <PostCard nomalWidth="nomalWidth" />
+            <PostCard nomalWidth="nomalWidth" />
+            <PostCard nomalWidth="nomalWidth" />
           </div>
         </section>
       </section>
