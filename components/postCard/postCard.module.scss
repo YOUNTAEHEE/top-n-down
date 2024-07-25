@@ -18,8 +18,8 @@
   &.middleWidth {
     width: calc((100% - 80px) / 5);
   }
-  &.topWidth {
-    width: calc(100% / 4);
+  &.bestWidth {
+    width: calc((100% - 60px) / 4);
   }
   &.coverWidth {
     width: 307px;

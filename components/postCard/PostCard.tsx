@@ -9,7 +9,13 @@ interface Props {
   linkMove?: boolean;
   coverCardWhiteBg?: string;
 }
-export default function PostCard({ middleWidth, bestWidth, coverWidth, linkMove, coverCardWhiteBg }: Props) {
+export default function PostCard({
+  middleWidth,
+  bestWidth,
+  coverWidth,
+  linkMove,
+  coverCardWhiteBg,
+}: Props) {
   const router = useRouter();
   const handleClick = () => {
     if (!linkMove) {
@@ -30,9 +36,25 @@ export default function PostCard({ middleWidth, bestWidth, coverWidth, linkMove,
       onClick={handleClick}
     >
       <div className={styles.cardConTop}>
-        <p className={clsx(styles.cardTitle, !linkMove && styles.mainStyle, linkMove && styles.coverStyle)}>게시글 제목입니다. 게시글 제목입니다.</p>
-        <p className={clsx(styles.cardCon, !linkMove && styles.mainStyle, linkMove && styles.coverStyle)}>
-          게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글
+        <p
+          className={clsx(
+            styles.cardTitle,
+            !linkMove && styles.mainStyle,
+            linkMove && styles.coverStyle
+          )}
+        >
+          게시글 제목입니다. 게시글 제목입니다.
+        </p>
+        <p
+          className={clsx(
+            styles.cardCon,
+            !linkMove && styles.mainStyle,
+            linkMove && styles.coverStyle
+          )}
+        >
+          게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글
+          내용입니다.게시글 내용입니다.게시글 내용입니다.게시글
+          내용입니다.게시글 내용입니다.게시글
         </p>
       </div>
       <p className={styles.cardTopndown}>

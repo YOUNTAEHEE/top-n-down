@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [cover, setCover] = useState(true);
-
+  const [isCoverVisible, setIsCoverVisible] = useState(true);
   useEffect(() => {
     const coverShown = sessionStorage.getItem("coverShown");
     if (!coverShown) {
@@ -32,7 +32,10 @@ export default function RootLayout({
     if (cover) {
       const timer = setTimeout(() => {
         setCover(false);
-      }, 3000);
+        setTimeout(() => {
+          setIsCoverVisible(false);
+        }, 4000);
+      }, 2000);
 
       return () => {
         clearTimeout(timer);
@@ -46,9 +49,10 @@ export default function RootLayout({
         <Metadata seoTitle="topndown" seoDescription="top & down post" />
       </head>
       <body className={inter.className}>
-        {cover ? (
+        {isCoverVisible && (
           <Cover off={cover ? "on" : "off"} linkMove={cover ? true : false} />
-        ) : (
+        )}
+        {!cover && (
           <main className="wrap">
             <Header />
             <div>{children}</div>
