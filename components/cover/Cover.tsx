@@ -1,8 +1,6 @@
-// "use client";
 import styles from "./cover.module.scss";
 import clsx from "clsx";
 import PostCard from "../postCard/PostCard";
-import { useEffect, useState } from "react";
 import { BsHandThumbsUpFill } from "react-icons/bs";
 interface Props {
   off: string;
@@ -10,7 +8,7 @@ interface Props {
 export default function Cover({ off }: Props) {
   return (
     <>
-      <div className={clsx(styles.coverAllWrap, styles[off])}>
+      <div className={clsx(styles.coverAllWrap, off && styles[off])}>
         <section className={clsx(styles.coverWrap)}>
           <h2>TOPNDOWN</h2>
           <section className={styles.visualLeft}>
@@ -24,6 +22,28 @@ export default function Cover({ off }: Props) {
             </div>
             <div className={styles.leftBottom}>
               <BsHandThumbsUpFill className={styles.goodBig} />
+              <BsHandThumbsUpFill className={styles.goodMiddle} />
+              <BsHandThumbsUpFill className={styles.good2xSmall} />
+              <p className={styles.visualNum}>1000</p>
+              <p className={styles.visualNum02}>1000</p>
+              <p className={styles.visualNum03}>1000</p>
+              <div className={styles.delPostNum}>-오늘 사라진 게시물 1000</div>
+              <div className={styles.delPostNum02}>-오늘 사라진 게시물 1000</div>
+              <div className={styles.circle}>
+                <BsHandThumbsUpFill className={styles.goodSmall} />
+              </div>
+              <div className={styles.circle02}>
+                <BsHandThumbsUpFill className={styles.goodSmall} />
+              </div>
+              <div className={styles.circle03}>
+                <BsHandThumbsUpFill className={styles.goodSmall} />
+              </div>
+              <div className={styles.circle04}>
+                <BsHandThumbsUpFill className={styles.goodSmall} />
+              </div>
+              <div className={styles.circle05}>
+                <BsHandThumbsUpFill className={styles.goodSmall} />
+              </div>
             </div>
           </section>
           <section className={styles.visualRight}>
@@ -42,7 +62,6 @@ export default function Cover({ off }: Props) {
           </section>
         </section>
       </div>
-      {/* ) : null} */}
     </>
   );
 }

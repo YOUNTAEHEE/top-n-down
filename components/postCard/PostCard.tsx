@@ -4,14 +4,14 @@ import clsx from "clsx";
 import { useRouter } from "next/navigation";
 interface Props {
   middleWidth?: string;
-  nomalWidth?: string;
+  bestWidth?: string;
   coverWidth?: string;
 }
-export default function PostCard({ middleWidth, nomalWidth, coverWidth }: Props) {
+export default function PostCard({ middleWidth, bestWidth, coverWidth }: Props) {
   const router = useRouter();
   return (
     <article
-      className={clsx(styles.postCard, middleWidth && styles[middleWidth], nomalWidth && styles[nomalWidth], coverWidth && styles[coverWidth])}
+      className={clsx(styles.postCard, middleWidth && styles[middleWidth], bestWidth && styles[bestWidth], coverWidth && styles[coverWidth])}
       onClick={() => router.push("/post/${id}")}
     >
       <div className={styles.cardConTop}>

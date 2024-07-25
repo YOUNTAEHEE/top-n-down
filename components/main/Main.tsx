@@ -13,11 +13,11 @@ export default function MainPage() {
             최근 24시간 내 <br />
             <span className={styles.TitleEng}>TOP ISSUE</span>
           </h2>
-          <div className={styles.cardList}>
-            <PostCard nomalWidth="nomalWidth" />
-            <PostCard nomalWidth="nomalWidth" />
-            <PostCard nomalWidth="nomalWidth" />
-            <PostCard nomalWidth="nomalWidth" />
+          <div className={styles.bestCardList}>
+            <PostCard bestWidth="bestWidth" />
+            <PostCard bestWidth="bestWidth" />
+            <PostCard bestWidth="bestWidth" />
+            <PostCard bestWidth="bestWidth" />
           </div>
         </section>
         <section className={styles.middleCardList}>
@@ -48,11 +48,11 @@ export default function MainPage() {
             최근 24시간 내 <br />
             <span className={styles.TitleEng}>DOWN ISSUE</span>
           </h2>
-          <div className={styles.cardList}>
-            <PostCard nomalWidth="nomalWidth" />
-            <PostCard nomalWidth="nomalWidth" />
-            <PostCard nomalWidth="nomalWidth" />
-            <PostCard nomalWidth="nomalWidth" />
+          <div className={styles.bestCardList}>
+            <PostCard bestWidth="bestWidth" />
+            <PostCard bestWidth="bestWidth" />
+            <PostCard bestWidth="bestWidth" />
+            <PostCard bestWidth="bestWidth" />
           </div>
         </section>
       </section>
