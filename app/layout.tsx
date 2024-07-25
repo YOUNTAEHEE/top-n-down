@@ -16,19 +16,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [cover, setCover] = useState(true);
-  const [isCoverVisible, setIsCoverVisible] = useState(true);
-  useEffect(() => {
+  const [cover, setCover] = useState(() => {
     const coverShown = sessionStorage.getItem("coverShown");
-    if (coverShown) {
-      setCover(false);
-      setIsCoverVisible(false);
-    } else {
+    return !coverShown;
+  });
+  const [isCoverVisible, setIsCoverVisible] = useState(() => {
+    const coverShown = sessionStorage.getItem("coverShown");
+    return !coverShown;
+  });
+
+  useEffect(() => {
+    if (!sessionStorage.getItem("coverShown")) {
       sessionStorage.setItem("coverShown", "true");
-      setCover(true);
     }
   }, []);
-
   useEffect(() => {
     if (cover) {
       const timer = setTimeout(() => {
