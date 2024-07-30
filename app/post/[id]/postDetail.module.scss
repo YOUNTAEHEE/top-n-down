@@ -45,11 +45,17 @@
           &.on {
             color: rgba(var(--baseColor-code), 1);
           }
+          &:hover {
+            color: rgba(var(--baseColor-code), 1);
+          }
           .choiceTopSTxt {
             font-size: 0.8rem;
             margin-left: 5px;
             color: rgba(var(--baseColor-code), 0.5);
             &.on {
+              color: rgba(var(--baseColor-code), 1);
+            }
+            &:hover {
               color: rgba(var(--baseColor-code), 1);
             }
           }
@@ -82,11 +88,21 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          cursor: pointer;
+          &.on {
+            color: rgba(var(--baseColor-code), 1);
+          }
+          &:hover {
+            color: rgba(var(--baseColor-code), 1);
+          }
           .choiceTopSTxt {
             font-size: 0.8rem;
             margin-left: 5px;
             color: rgba(var(--baseColor-code), 0.5);
             &.on {
+              color: rgba(var(--baseColor-code), 1);
+            }
+            &:hover {
               color: rgba(var(--baseColor-code), 1);
             }
           }

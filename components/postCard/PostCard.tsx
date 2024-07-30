@@ -2,26 +2,36 @@
 import styles from "./postCard.module.scss";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
+import supabase from "../../supabaseClient";
+import { useEffect, useState } from "react";
 interface Props {
+  post: {
+    id: number;
+    title: string;
+    content: string;
+    up_votes: number;
+    down_votes: number;
+  };
   middleWidth?: string;
   bestWidth?: string;
   coverWidth?: string;
   linkMove?: boolean;
   coverCardWhiteBg?: string;
 }
-export default function PostCard({
-  middleWidth,
-  bestWidth,
-  coverWidth,
-  linkMove,
-  coverCardWhiteBg,
-}: Props) {
+
+export default function PostCard({ post, middleWidth, bestWidth, coverWidth, linkMove, coverCardWhiteBg }: Props) {
   const router = useRouter();
-  const handleClick = () => {
+
+  const handleClick = (id: number) => {
     if (!linkMove) {
-      router.push("/post/${id}");
+      router.push(`/post/${id}`);
     }
   };
+
+  if (!post) {
+    return <p>No post data available</p>;
+  }
+
   return (
     <article
       className={clsx(
@@ -33,36 +43,19 @@ export default function PostCard({
         linkMove && styles.coverStyle,
         coverCardWhiteBg
       )}
-      onClick={handleClick}
+      onClick={() => handleClick(post.id)}
+      key={post.id}
     >
       <div className={styles.cardConTop}>
-        <p
-          className={clsx(
-            styles.cardTitle,
-            !linkMove && styles.mainStyle,
-            linkMove && styles.coverStyle
-          )}
-        >
-          게시글 제목입니다. 게시글 제목입니다.
-        </p>
-        <p
-          className={clsx(
-            styles.cardCon,
-            !linkMove && styles.mainStyle,
-            linkMove && styles.coverStyle
-          )}
-        >
-          게시글 내용입니다.게시글 내용입니다.게시글 내용입니다.게시글
-          내용입니다.게시글 내용입니다.게시글 내용입니다.게시글
-          내용입니다.게시글 내용입니다.게시글
-        </p>
+        <p className={clsx(styles.cardTitle, !linkMove && styles.mainStyle, linkMove && styles.coverStyle)}>{post.title}</p>
+        <p className={clsx(styles.cardCon, !linkMove && styles.mainStyle, linkMove && styles.coverStyle)}>{post.content}</p>
       </div>
       <p className={styles.cardTopndown}>
         <span className={styles.topView}>
-          TOP <span className={styles.topNum}>1000</span>
+          TOP <span className={styles.topNum}>{post.up_votes}</span>
         </span>
         <span className={styles.downView}>
-          DOWN <span className={styles.downNum}>1000</span>
+          DOWN <span className={styles.downNum}>{post.down_votes}</span>
         </span>
       </p>
     </article>
