@@ -24,6 +24,7 @@ export default function PostDetail({ params }: PostDetailProps) {
   const [post, setPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState(true);
   const [hasVoted, setHasVoted] = useState<{ up: boolean; down: boolean }>({ up: false, down: false });
+  const [hovered, setHovered] = useState<{ up: boolean; down: boolean }>({ up: false, down: false });
 
   const fetchPostDetail = async () => {
     setLoading(true);
@@ -102,29 +103,29 @@ export default function PostDetail({ params }: PostDetailProps) {
           </button>
         </div>
         <div className={styles.choiceWrap}>
-          <div className={styles.choiceTop}>
-            <button
-              type="button"
-              className={clsx(styles.topBtn, { [styles.on]: hasVoted.up })}
-              onClick={() => handleVote("up")}
-              disabled={hasVoted.up || hasVoted.down}
-            >
+          <div
+            className={clsx(styles.choiceTop, { [styles.on]: hasVoted.up || hovered.up })}
+            onMouseEnter={() => setHovered({ ...hovered, up: true })}
+            onMouseLeave={() => setHovered({ ...hovered, up: false })}
+            onClick={() => handleVote("up")}
+          >
+            <button type="button" className={clsx(styles.topBtn, { [styles.on]: hasVoted.up || hovered.up })} disabled={hasVoted.up || hasVoted.down}>
               TOP
-              <span className={clsx(styles.choiceTopSTxt, { [styles.on]: hasVoted.up })}>선택하기</span>
+              <span className={clsx(styles.choiceTopSTxt, { [styles.on]: hasVoted.up || hovered.up })}>선택하기</span>
             </button>
             <div className={styles.topVote}>
               <div className={styles.voteNum}>{post.up_votes}</div>
             </div>
           </div>
-          <div className={styles.choiceDown}>
-            <button
-              type="button"
-              className={clsx(styles.downBtn, { [styles.on]: hasVoted.down })}
-              onClick={() => handleVote("down")}
-              disabled={hasVoted.up || hasVoted.down}
-            >
+          <div
+            className={clsx(styles.choiceDown, { [styles.on]: hasVoted.down || hovered.down })}
+            onMouseEnter={() => setHovered({ ...hovered, down: true })}
+            onMouseLeave={() => setHovered({ ...hovered, down: false })}
+            onClick={() => handleVote("down")}
+          >
+            <button type="button" className={clsx(styles.downBtn, { [styles.on]: hasVoted.down || hovered.down })} disabled={hasVoted.up || hasVoted.down}>
               DOWN
-              <span className={clsx(styles.choiceTopSTxt, { [styles.on]: hasVoted.down })}>선택하기</span>
+              <span className={clsx(styles.choiceTopSTxt, { [styles.on]: hasVoted.down || hovered.down })}>선택하기</span>
             </button>
             <div className={styles.downVote}>
               <div className={styles.voteNum}>{post.down_votes}</div>
