@@ -17,6 +17,8 @@ interface Post {
 export default function MainPage() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 15;
   const fetchPosts = async () => {
     setLoading(true);
     const { data, error } = await supabase.from("post").select("*").order("id", { ascending: false });
@@ -51,7 +53,10 @@ export default function MainPage() {
     .slice()
     .sort((a, b) => b.down_votes - a.down_votes)
     .slice(0, 4);
-
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
   return (
     <section className={clsx(styles.mainPage)}>
       <div className={styles.issueDiv}>TOP ISSUE</div>
@@ -70,9 +75,9 @@ export default function MainPage() {
             새롭게 올라온 <span className={styles.TitleEng}>ISSUE</span>
           </h2>
           <div className={styles.cardList}>
-            {loading ? <p>Loading...</p> : posts.map((post) => <PostCard key={post.id} post={post} middleWidth="middleWidth" />)}
+            {loading ? <p>Loading...</p> : currentPosts.map((post) => <PostCard key={post.id} post={post} middleWidth="middleWidth" />)}
           </div>
-          <Pagination />
+          <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} currentPage={currentPage} />
         </section>
         <section className={styles.downCardList}>
           <h2 className={styles.cardListTitle}>
