@@ -41,6 +41,17 @@ export default function MainPage() {
       supabase.removeChannel(channel);
     };
   }, []);
+
+  const topPosts = posts
+    .slice()
+    .sort((a, b) => b.up_votes - a.up_votes)
+    .slice(0, 4);
+
+  const downPosts = posts
+    .slice()
+    .sort((a, b) => b.down_votes - a.down_votes)
+    .slice(0, 4);
+
   return (
     <section className={clsx(styles.mainPage)}>
       <div className={styles.issueDiv}>TOP ISSUE</div>
@@ -51,7 +62,7 @@ export default function MainPage() {
             <span className={styles.TitleEng}>TOP ISSUE</span>
           </h2>
           <div className={styles.bestCardList}>
-            {loading ? <p>Loading...</p> : posts.slice(0, 4).map((post) => <PostCard key={post.id} post={post} bestWidth="bestWidth" />)}
+            {loading ? <p>Loading...</p> : topPosts.map((post) => <PostCard key={post.id} post={post} bestWidth="bestWidth" />)}
           </div>
         </section>
         <section className={styles.middleCardList}>
@@ -69,7 +80,7 @@ export default function MainPage() {
             <span className={styles.TitleEng}>DOWN ISSUE</span>
           </h2>
           <div className={styles.bestCardList}>
-            {loading ? <p>Loading...</p> : posts.slice(0, 4).map((post) => <PostCard key={post.id} post={post} bestWidth="bestWidth" />)}
+            {loading ? <p>Loading...</p> : downPosts.map((post) => <PostCard key={post.id} post={post} bestWidth="bestWidth" />)}
           </div>
         </section>
       </section>

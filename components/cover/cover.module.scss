@@ -126,12 +126,7 @@
           color: #fff;
           padding: 5px 20px;
           padding-left: 100px;
-          background: linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0.7),
-            rgba(255, 255, 255, 0.7),
-            black
-          );
+          background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.7), black);
           z-index: 1;
         }
         .delPostNum02 {
@@ -143,12 +138,7 @@
           color: #fff;
           padding: 5px 20px;
           padding-left: 100px;
-          background: linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0.7),
-            rgba(255, 255, 255, 0.7),
-            black
-          );
+          background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.7), black);
           z-index: 1;
         }
         .circle {
@@ -274,5 +264,39 @@
   to {
     opacity: 0;
     visibility: hidden;
+  }
+}
+@media (max-width: 640px) {
+  .coverAllWrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    &.on {
+      opacity: 1;
+      visibility: visible;
+      animation: fadeout 4s forwards;
+    }
+    &.off {
+      opacity: 0;
+      visibility: hidden;
+      transition: visibility 0s 4s, opacity 4s linear;
+    }
+    .coverWrap {
+      h2 {
+        width: 100%;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #ff0000;
+      }
+      .visualLeft {
+        width: 100%;
+        transform: scale(10%);
+        transform: translateY(-50%);
+        .visualRight {
+          width: 0%;
+        }
+      }
+    }
   }
 }

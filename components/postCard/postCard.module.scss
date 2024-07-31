@@ -75,3 +75,30 @@
     }
   }
 }
+@media (max-width: 1000px) {
+  .postCard {
+    &.middleWidth {
+      width: calc((100% - 40px) / 3);
+    }
+    &.bestWidth {
+      width: calc((100% - 20px) / 2);
+    }
+    &.coverWidth {
+      width: 0;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .postCard {
+    &.middleWidth {
+      width: calc((100% - 20px) / 2);
+    }
+    &.bestWidth {
+      width: calc((100% - 20px) / 2);
+    }
+    &.coverWidth {
+      width: 0;
+    }
+  }
+}

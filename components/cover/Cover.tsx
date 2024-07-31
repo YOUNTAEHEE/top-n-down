@@ -2,11 +2,38 @@ import styles from "./cover.module.scss";
 import clsx from "clsx";
 import PostCard from "../postCard/PostCard";
 import { BsHandThumbsUpFill } from "react-icons/bs";
+import { useEffect, useState } from "react";
+import supabase from "../../supabaseClient";
 interface Props {
   off: string;
   linkMove: boolean;
 }
+interface Post {
+  id: number;
+  title: string;
+  content: string;
+  up_votes: number;
+  down_votes: number;
+}
+
 export default function Cover({ off, linkMove }: Props) {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchPosts = async () => {
+    setLoading(true);
+    const { data, error } = await supabase.from("post").select("*").order("id", { ascending: false }).limit(4);
+    if (error) {
+      console.error("Error fetching posts:", error);
+    } else {
+      setPosts(data || []);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
   return (
     <>
       <div className={clsx(styles.coverAllWrap, off && styles[off])}>
@@ -48,18 +75,24 @@ export default function Cover({ off, linkMove }: Props) {
             </div>
           </section>
           <section className={styles.visualRight}>
-            <div className={styles.cardDiv}>
-              <PostCard coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg01} />
-              <div className={styles.cardMt}>
-                <PostCard coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg02} />
-              </div>
-            </div>
-            <div className={styles.cardDiv}>
-              <PostCard coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg03} />
-              <div className={styles.cardMt}>
-                <PostCard coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg04} />
-              </div>
-            </div>
+            {loading ? (
+              <p>Loading...</p>
+            ) : (
+              <>
+                <div className={styles.cardDiv}>
+                  {posts[0] && <PostCard post={posts[0]} coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg01} />}
+                  <div className={styles.cardMt}>
+                    {posts[1] && <PostCard post={posts[1]} coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg02} />}
+                  </div>
+                </div>
+                <div className={styles.cardDiv}>
+                  {posts[2] && <PostCard post={posts[2]} coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg03} />}
+                  <div className={styles.cardMt}>
+                    {posts[3] && <PostCard post={posts[3]} coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg04} />}
+                  </div>
+                </div>
+              </>
+            )}
           </section>
         </section>
       </div>

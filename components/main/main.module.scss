@@ -2,12 +2,7 @@
   width: 100%;
   .issueDiv {
     height: 55px;
-    background: linear-gradient(
-      90deg,
-      rgba(187, 41, 173, 1) 0%,
-      rgba(54, 4, 38, 1) 49%,
-      rgba(255, 0, 0, 1) 100%
-    );
+    background: linear-gradient(90deg, rgba(187, 41, 173, 1) 0%, rgba(54, 4, 38, 1) 49%, rgba(255, 0, 0, 1) 100%);
     text-align: center;
     font-weight: 600;
     line-height: 55px;
@@ -38,7 +33,7 @@
       }
       .bestCardList {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         gap: 20px;
         width: calc(100% - 270px);
@@ -89,6 +84,115 @@
         align-items: center;
         gap: 20px;
         width: calc(100% - 270px);
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .mainPage {
+    .containerWrap {
+      .topCardList {
+        flex-wrap: wrap;
+
+        .cardListTitle {
+          text-align: left;
+          font-size: 1.3rem;
+          align-self: normal;
+          width: 100%;
+          .TitleEng {
+            font-size: 1.9rem;
+          }
+        }
+        .bestCardList {
+          width: 100%;
+          flex-wrap: wrap;
+        }
+      }
+      .middleCardList {
+        .cardListTitle {
+          display: flex;
+          justify-content: flex-end;
+          flex-wrap: wrap;
+          font-size: 1.3rem;
+          margin-bottom: 30px;
+          margin-top: 12vh;
+          width: 100%;
+          .TitleEng {
+            width: 100%;
+            font-size: 1.9rem;
+          }
+        }
+      }
+      .downCardList {
+        flex-wrap: wrap;
+        .cardListTitle {
+          text-align: left;
+          font-size: 1.3rem;
+          align-self: normal;
+          width: 100%;
+          .TitleEng {
+            font-size: 1.9rem;
+          }
+        }
+        .bestCardList {
+          width: 100%;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .mainPage {
+    .containerWrap {
+      .topCardList {
+        flex-wrap: wrap;
+
+        .cardListTitle {
+          text-align: left;
+          font-size: 1.3rem;
+          align-self: normal;
+          width: 100%;
+          .TitleEng {
+            font-size: 1.9rem;
+          }
+        }
+        .bestCardList {
+          width: 100%;
+          flex-wrap: wrap;
+        }
+      }
+      .middleCardList {
+        .cardListTitle {
+          display: flex;
+          justify-content: flex-end;
+          flex-wrap: wrap;
+          font-size: 1.3rem;
+          margin-bottom: 30px;
+          margin-top: 12vh;
+          width: 100%;
+          .TitleEng {
+            width: 100%;
+            font-size: 1.9rem;
+          }
+        }
+      }
+      .downCardList {
+        flex-wrap: wrap;
+        .cardListTitle {
+          text-align: left;
+          font-size: 1.3rem;
+          align-self: normal;
+          width: 100%;
+          .TitleEng {
+            font-size: 1.9rem;
+          }
+        }
+        .bestCardList {
+          width: 100%;
+          flex-wrap: wrap;
+        }
       }
     }
   }

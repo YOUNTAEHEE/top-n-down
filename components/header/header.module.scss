@@ -54,3 +54,15 @@
     }
   }
 }
+@media (max-width: 640px) {
+  .headerWrap {
+    .containerWrap {
+      h1 {
+        font-size: 1.5rem;
+      }
+      .writeBtn {
+        transform: scale(90%);
+      }
+    }
+  }
+}

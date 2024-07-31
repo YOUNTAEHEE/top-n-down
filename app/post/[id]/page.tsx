@@ -50,15 +50,16 @@ export default function PostDetail({ params }: PostDetailProps) {
 
     console.log("Updating vote for post:", post.id, "Type:", type);
 
-    const { error } = await supabase
+    const { data, error } = await supabase
       .from("post")
       .update(type === "up" ? { up_votes: newVotes } : { down_votes: newVotes })
-      .eq("id", post.id);
+      .eq("id", post.id)
+      .select("*");
 
     if (error) {
       console.error("Error updating vote:", error);
     } else {
-      console.log("Vote updated successfully:", updatedPost);
+      console.log("Vote updated successfully:", data);
       setPost(updatedPost);
       const updatedVotes = { ...hasVoted, [type]: true };
       setHasVoted(updatedVotes);
