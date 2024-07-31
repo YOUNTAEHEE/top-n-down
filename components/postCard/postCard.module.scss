@@ -92,10 +92,10 @@
 @media (max-width: 640px) {
   .postCard {
     &.middleWidth {
-      width: calc((100% - 20px) / 2);
+      width: 100%;
     }
     &.bestWidth {
-      width: calc((100% - 20px) / 2);
+      width: 100%;
     }
     &.coverWidth {
       width: 0;
