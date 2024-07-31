@@ -60,15 +60,29 @@
   .cardTopndown {
     width: 100%;
     align-self: flex-end;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
     .topView {
       color: var(--baseColor);
       margin-right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
       .topNum {
         color: rgba(var(--redColor), 1);
       }
     }
     .downView {
       color: rgba(var(--baseColor-code), 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
       .downNum {
         color: rgba(var(--redColor), 0.7);
       }
