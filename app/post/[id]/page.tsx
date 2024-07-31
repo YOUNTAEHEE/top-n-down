@@ -86,6 +86,7 @@ export default function PostDetail({ params }: PostDetailProps) {
   }, [params.id]);
 
   if (loading) {
+    // 로딩바 나중에 붙이기
     return <p className={styles.loading}>Loading...</p>;
   }
 
