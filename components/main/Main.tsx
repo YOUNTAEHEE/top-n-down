@@ -70,7 +70,7 @@ export default function MainPage() {
             새롭게 올라온 <span className={styles.TitleEng}>ISSUE</span>
           </h2>
           <div className={styles.cardList}>
-            {loading ? <p>Loading...</p> : posts.slice(4, 15).map((post) => <PostCard key={post.id} post={post} middleWidth="middleWidth" />)}
+            {loading ? <p>Loading...</p> : posts.map((post) => <PostCard key={post.id} post={post} middleWidth="middleWidth" />)}
           </div>
           <Pagination />
         </section>
