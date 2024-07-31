@@ -1,5 +1,12 @@
+.loading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--baseColor);
+  margin: 0 auto;
+}
 .postDetailWrap {
   width: 100%;
+
   .containerWrap {
     width: 85vw;
     margin: 0 auto;

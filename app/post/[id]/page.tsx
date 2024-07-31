@@ -86,7 +86,7 @@ export default function PostDetail({ params }: PostDetailProps) {
   }, [params.id]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p className={styles.loading}>Loading...</p>;
   }
 
   if (!post) {
