@@ -26,6 +26,7 @@ export default function Cover({ off, linkMove }: Props) {
     if (error) {
       console.error("Error fetching posts:", error);
     } else {
+      console.log("Fetched posts:", data); // 데이터 확인을 위한 콘솔 로그
       setPosts(data || []);
     }
     setLoading(false);
@@ -79,16 +80,17 @@ export default function Cover({ off, linkMove }: Props) {
               <p>Loading...</p>
             ) : (
               <>
+                {/* 이거 추가하니까 cover에 postcard노출안됨 */}
                 <div className={styles.cardDiv}>
-                  {posts[0] && <PostCard post={posts[0]} coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg01} />}
+                  {posts[0] && <PostCard post={posts[0]} coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg="coverCardWhiteBg01" />}
                   <div className={styles.cardMt}>
-                    {posts[1] && <PostCard post={posts[1]} coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg02} />}
+                    {posts[1] && <PostCard post={posts[1]} coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg="coverCardWhiteBg02" />}
                   </div>
                 </div>
                 <div className={styles.cardDiv}>
-                  {posts[2] && <PostCard post={posts[2]} coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg03} />}
+                  {posts[2] && <PostCard post={posts[2]} coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg="coverCardWhiteBg03" />}
                   <div className={styles.cardMt}>
-                    {posts[3] && <PostCard post={posts[3]} coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg={styles.coverCardWhiteBg04} />}
+                    {posts[3] && <PostCard post={posts[3]} coverWidth="coverWidth" linkMove={linkMove} coverCardWhiteBg="coverCardWhiteBg04" />}
                   </div>
                 </div>
               </>
