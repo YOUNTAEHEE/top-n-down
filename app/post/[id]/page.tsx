@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import supabase from "../../../supabaseClient";
-
+import { MoonLoader } from "react-spinners";
 interface PostDetailProps {
   params: {
     id: number;
@@ -86,8 +86,12 @@ export default function PostDetail({ params }: PostDetailProps) {
   }, [params.id]);
 
   if (loading) {
-    // 로딩바 나중에 붙이기
-    return <p className={styles.loading}>Loading...</p>;
+    // 로딩바 시도중.. 나오는지 확인
+    return (
+      <p className={styles.loading}>
+        <MoonLoader />
+      </p>
+    );
   }
 
   if (!post) {
