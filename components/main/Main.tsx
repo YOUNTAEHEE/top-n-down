@@ -5,7 +5,7 @@ import PostCard from "../postCard/PostCard";
 import Pagination from "../pagination/Pagination";
 import supabase from "../../supabaseClient";
 import { useState, useEffect } from "react";
-
+import { MoonLoader } from "react-spinners";
 interface Post {
   id: number;
   title: string;
@@ -67,7 +67,7 @@ export default function MainPage() {
             <span className={styles.TitleEng}>TOP ISSUE</span>
           </h2>
           <div className={styles.bestCardList}>
-            {loading ? <p>Loading...</p> : topPosts.map((post) => <PostCard key={post.id} post={post} bestWidth="bestWidth" />)}
+            {loading ? <MoonLoader /> : topPosts.map((post) => <PostCard key={post.id} post={post} bestWidth="bestWidth" />)}
           </div>
         </section>
         <section className={styles.middleCardList}>
@@ -75,7 +75,7 @@ export default function MainPage() {
             새롭게 올라온 <span className={styles.TitleEng}>ISSUE</span>
           </h2>
           <div className={styles.cardList}>
-            {loading ? <p>Loading...</p> : currentPosts.map((post) => <PostCard key={post.id} post={post} middleWidth="middleWidth" />)}
+            {loading ? <MoonLoader /> : currentPosts.map((post) => <PostCard key={post.id} post={post} middleWidth="middleWidth" />)}
           </div>
           <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} currentPage={currentPage} />
         </section>
@@ -85,7 +85,7 @@ export default function MainPage() {
             <span className={styles.TitleEng}>DOWN ISSUE</span>
           </h2>
           <div className={styles.bestCardList}>
-            {loading ? <p>Loading...</p> : downPosts.map((post) => <PostCard key={post.id} post={post} bestWidth="bestWidth" />)}
+            {loading ? <MoonLoader /> : downPosts.map((post) => <PostCard key={post.id} post={post} bestWidth="bestWidth" />)}
           </div>
         </section>
       </section>
